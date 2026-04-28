@@ -1,0 +1,332 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 240 20% 98%;
+    --foreground: 240 30% 12%;
+
+    --card: 240 15% 95%;
+    --card-foreground: 240 30% 12%;
+
+    --popover: 240 15% 95%;
+    --popover-foreground: 240 30% 12%;
+
+    --primary: 200 85% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 280 60% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 10% 90%;
+    --muted-foreground: 240 15% 40%;
+
+    --accent: 35 95% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 20% 88%;
+    --input: 240 20% 88%;
+    --ring: 200 85% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom vibrant tokens */
+    --ocean: 195 100% 45%;
+    --ocean-deep: 210 100% 35%;
+    --ocean-light: 195 80% 85%;
+    --sand: 40 40% 92%;
+    --sunset: 25 100% 55%;
+    --sunset-hot: 15 100% 50%;
+    --sunset-soft: 30 80% 70%;
+    --sky: 200 60% 92%;
+    --golden: 45 100% 50%;
+    --cosmic: 270 80% 60%;
+    --cosmic-deep: 280 90% 40%;
+    --space: 240 50% 15%;
+    --star: 50 100% 70%;
+    
+    /* Gradients */
+    --gradient-sky: linear-gradient(180deg, hsl(200 70% 90%) 0%, hsl(40 35% 96%) 100%);
+    --gradient-sunset: linear-gradient(135deg, hsl(25 100% 55%) 0%, hsl(45 100% 50%) 100%);
+    --gradient-ocean: linear-gradient(180deg, hsl(195 100% 45%) 0%, hsl(210 100% 35%) 100%);
+    --gradient-cosmic: linear-gradient(135deg, hsl(240 50% 15%) 0%, hsl(280 60% 30%) 50%, hsl(200 80% 40%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(200 50% 40% / 0.2);
+    --shadow-glow: 0 0 30px hsl(25 100% 55% / 0.4);
+    --shadow-cosmic: 0 0 40px hsl(270 80% 60% / 0.3);
+
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Lato', sans-serif;
+  }
+
+  .dark {
+    --background: 240 30% 8%;
+    --foreground: 40 30% 95%;
+
+    --card: 240 25% 12%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 240 25% 12%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 240 30% 8%;
+
+    --secondary: 280 70% 60%;
+    --secondary-foreground: 240 30% 8%;
+
+    --muted: 240 20% 18%;
+    --muted-foreground: 40 15% 65%;
+
+    --accent: 35 100% 55%;
+    --accent-foreground: 240 30% 8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 20% 22%;
+    --input: 240 20% 22%;
+    --ring: 195 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .bg-gradient-sky {
+    background: var(--gradient-sky);
+  }
+
+  .bg-gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+
+  .bg-gradient-ocean {
+    background: var(--gradient-ocean);
+  }
+
+  .bg-gradient-cosmic {
+    background: var(--gradient-cosmic);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-cosmic {
+    box-shadow: var(--shadow-cosmic);
+  }
+
+  .text-ocean {
+    color: hsl(var(--ocean));
+  }
+
+  .text-ocean-deep {
+    color: hsl(var(--ocean-deep));
+  }
+
+  .text-sunset {
+    color: hsl(var(--sunset));
+  }
+
+  .text-sunset-hot {
+    color: hsl(var(--sunset-hot));
+  }
+
+  .text-golden {
+    color: hsl(var(--golden));
+  }
+
+  .text-cosmic {
+    color: hsl(var(--cosmic));
+  }
+
+  .text-star {
+    color: hsl(var(--star));
+  }
+
+  .bg-ocean {
+    background-color: hsl(var(--ocean));
+  }
+
+  .bg-ocean-deep {
+    background-color: hsl(var(--ocean-deep));
+  }
+
+  .bg-ocean-light {
+    background-color: hsl(var(--ocean-light));
+  }
+
+  .bg-sand {
+    background-color: hsl(var(--sand));
+  }
+
+  .bg-sunset {
+    background-color: hsl(var(--sunset));
+  }
+
+  .bg-sunset-hot {
+    background-color: hsl(var(--sunset-hot));
+  }
+
+  .bg-cosmic {
+    background-color: hsl(var(--cosmic));
+  }
+
+  .bg-space {
+    background-color: hsl(var(--space));
+  }
+
+  .border-ocean {
+    border-color: hsl(var(--ocean));
+  }
+
+  .border-cosmic {
+    border-color: hsl(var(--cosmic));
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(10px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(10px) rotate(-360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--cosmic) / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--cosmic) / 0.7);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, hsl(var(--golden) / 0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.animate-orbit {
+  animation: orbit 8s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-1500 {
+  animation-delay: 1.5s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
